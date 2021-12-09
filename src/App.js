@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Reactnode from './components/Reactnode';
+import Reactphp from './components/Reactphp';
+
+import { Link, Route } from 'react-router-dom'
+
+class App extends React.Component {
+
+  render() {
+    return (
+      <div>
+        <h2>Get the data </h2>
+        <Link to="/react-php" > from zend - mysql </Link> <br />
+        <Link to="/react-node" > from node - mysql</Link>
+
+        <Route path="/react-node"><Reactnode /></Route>
+        <Route path="/react-php"><Reactphp /></Route>
+
+      </div>
+    )
+  }
 }
 
-export default App;
+export default  App;
